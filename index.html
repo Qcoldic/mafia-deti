@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Продлёнка «Мафия.Дети»: встретим со школы, накормим, поможем с уроками</title>
+<meta name="description" content="Детский клуб «Мафия.Дети». Продлёнка в две смены: встречаем со школы, обед и полдник, помощь с домашним заданием, прогулки, фотоотчёт каждый день. До 10 детей в смене. Первое посещение бесплатно.">
+<meta name="theme-color" content="#1B120C">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Продлёнка «Мафия.Дети»">
+<meta property="og:description" content="Встретим со школы, накормим, поможем с уроками и погуляем. До 10 детей в смене, первое посещение бесплатно.">
+<!-- превью на GitHub Pages: при переезде на домен клиента поменять og:url и og:image и убрать noindex -->
+<meta property="og:url" content="https://qcoldic.github.io/mafia-deti/">
+<meta property="og:image" content="https://qcoldic.github.io/mafia-deti/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://qcoldic.github.io/mafia-deti/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/unbounded-cyr.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/golos-cyr.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<!-- Иконки: обводка и заливка через currentColor, цвет задаёт внешний svg -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-school" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10.5L12 6.5l7 4V21M9.5 21v-4.5h5V21M12 6.5V2.8l3.2 1.3L12 5.4"/><circle cx="12" cy="11.6" r="1.7"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.8h3.1l1.7-2.5h6.4l1.7 2.5H20a1 1 0 0 1 1 1V18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8.8a1 1 0 0 1 1-1z"/><circle cx="12" cy="13.2" r="3.5"/></symbol>
+    <symbol id="i-meal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12.4" cy="12.6" r="5.2"/><circle cx="12.4" cy="12.6" r="2.6"/><path d="M3 4v5a1.5 1.5 0 0 0 3 0V4M4.5 4v16.5M21 4c-1.5 0-2.5 2-2.5 5v3.8H21M21 4v16.5"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.6C10 5 7 4.5 3.5 5v13.2c3.5-.5 6.5 0 8.5 1.6 2-1.6 5-2.1 8.5-1.6V5C17 4.5 14 5 12 6.6zM12 6.6v13.2"/></symbol>
+    <symbol id="i-tree" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.2v-6.4M12 14.8c-4.4 0-6.9-2.3-6.9-5.2 0-2.3 1.6-3.9 3.5-4.2C9.3 3.6 10.6 2.8 12 2.8s2.7.8 3.4 2.6c1.9.3 3.5 1.9 3.5 4.2 0 2.9-2.5 5.2-6.9 5.2zM9.4 11.6l2.6 1.8 2.6-2.6M7.5 21.2h9"/></symbol>
+    <symbol id="i-kids" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="7.4" r="2.6"/><circle cx="16.2" cy="8.4" r="2.2"/><path d="M3.4 19.5v-1.3A4.6 4.6 0 0 1 8 13.6a4.6 4.6 0 0 1 4.3 2.9M12.6 19.5v-.9a3.6 3.6 0 0 1 7.2 0v.9"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3v5.6c0 4.5-3.2 8.2-7.5 9.4-4.3-1.2-7.5-4.9-7.5-9.4V6L12 3z"/><path d="M8.9 12.1l2.2 2.2 4.1-4.4"/></symbol>
+    <symbol id="i-person" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M5 20.2a7 7 0 0 1 14 0"/><path d="M17.5 4.2l1.1 1.1 2-2.1"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2l2.7 5.5 6 .9-4.4 4.2 1.1 6L12 17l-5.4 2.8 1.1-6-4.4-4.2 6-.9z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7.6-4.6-7.6-10.2A4.3 4.3 0 0 1 12 7.1a4.3 4.3 0 0 1 7.6 2.7C19.6 15.4 12 20 12 20z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.3s-6.6-6.1-6.6-11.1a6.6 6.6 0 0 1 13.2 0c0 5-6.6 11.1-6.6 11.1z"/><circle cx="12" cy="10.2" r="2.4"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5.1 3.6h3.1l1.6 4.1-2 1.3a10.4 10.4 0 0 0 5.2 5.2l1.3-2 4.1 1.6v3.1a2 2 0 0 1-2.2 2C9.6 18.4 5.6 14.4 3.1 7.8a2 2 0 0 1 2-4.2z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4L7 7M17 17l1.6 1.6M5.4 18.6L7 17M17 7l1.6-1.6"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h16v10.6H9.4L4 20V5.5z"/><path d="M8 9.6h8M8 12.6h5"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8.5" y="8.5" width="11.5" height="11.5" rx="2"/><path d="M15.5 8.5V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v9.5a1 1 0 0 0 1 1h3.5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="s-heart" viewBox="0 0 24 24"><path fill="currentColor" d="M12 21.2S3.6 15.8 3.6 9.8A4.7 4.7 0 0 1 12 6.9a4.7 4.7 0 0 1 8.4 2.9c0 6-8.4 11.4-8.4 11.4z"/></symbol>
+    <symbol id="s-spade" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.4s-8 6.4-8 11.1a4.2 4.2 0 0 0 7.1 3.1l-1.2 4.9h4.2l-1.2-4.9a4.2 4.2 0 0 0 7.1-3.1C20 8.8 12 2.4 12 2.4z"/></symbol>
+    <symbol id="s-diamond" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1.8l7.4 10.2L12 22.2 4.6 12z"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">К содержимому</a>
+
+<header class="top">
+  <div class="wrap top-row">
+    <a class="brand" href="#" aria-label="Мафия.Дети, на главную">
+      <img src="assets/img/logo-160.webp" width="40" height="40" alt="">
+      <span class="brand-text"><b>Мафия<span>.Дети</span></b><small>детский клуб</small></span>
+    </a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#smeny">Смены и цены</a>
+      <a href="#den">Что входит</a>
+      <a href="#kanikuly">Каникулы</a>
+      <a href="#adresa">Адреса</a>
+    </nav>
+    <div class="top-actions">
+      <a class="top-phone" href="tel:+79330512500">8 933 051-25-00</a>
+      <a class="btn btn-ghost-dark btn-sm btn-icon top-call" href="tel:+79330512500" aria-label="Позвонить: 8 933 051-25-00"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg></a>
+      <a class="btn btn-red btn-sm" href="#zapis">Записаться</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Первый экран: ночной город из логотипа, окна загораются -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-art" aria-hidden="true">
+        <div class="rays"></div>
+        <div class="glow"></div>
+        <img src="assets/img/logo-900.webp" srcset="assets/img/logo-480.webp 480w, assets/img/logo-900.webp 900w" sizes="(min-width: 960px) 520px, 62vw" width="900" height="900" alt="" fetchpriority="high">
+        <svg class="spark s1"><use href="#s-diamond"/></svg>
+        <svg class="spark s2"><use href="#s-diamond"/></svg>
+        <svg class="spark s3"><use href="#s-diamond"/></svg>
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow">Детский клуб «Мафия.Дети»</p>
+        <h1>Продлёнка</h1>
+        <p class="lead">Встретим ребёнка со школы, накормим обедом и&nbsp;полдником, поможем с&nbsp;уроками и&nbsp;выведем погулять. А&nbsp;вам каждый день пришлём фотоотчёт.</p>
+        <div class="hero-cta">
+          <a class="btn btn-red btn-lg" href="#zapis" data-want="Бесплатное посещение">Бесплатное посещение <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-ghost-dark btn-lg" href="tel:+79330512500"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg> Позвонить</a>
+        </div>
+        <dl class="facts">
+          <div><dt>до 10</dt><dd>детей в одной смене</dd></div>
+          <div><dt>07:40</dt><dd>начало второй смены</dd></div>
+          <div><dt>18:30</dt><dd>конец первой смены</dd></div>
+        </dl>
+      </div>
+    </div>
+    <svg class="skyline" viewBox="0 0 1440 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg>
+  </section>
+
+  <div class="ribbon-wrap" aria-hidden="true">
+    <div class="ribbon">
+      <div class="ribbon-track">
+        <span>Забота</span><span>Развитие</span><span>Безопасность</span><span>Забота</span><span>Развитие</span><span>Безопасность</span><span>Забота</span><span>Развитие</span><span>Безопасность</span>
+        <span>Забота</span><span>Развитие</span><span>Безопасность</span><span>Забота</span><span>Развитие</span><span>Безопасность</span><span>Забота</span><span>Развитие</span><span>Безопасность</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Смены и цены: две игральные карты -->
+  <section class="sec" id="smeny">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="tag">Смены и цены</p>
+        <h2>Две смены под школьное расписание</h2>
+        <p>Ребёнок учится в первую смену? Встретим после уроков. Во вторую? Возьмём с&nbsp;утра и&nbsp;отведём в&nbsp;школу.</p>
+      </div>
+      <div class="shifts">
+        <article class="pcard pcard--heart rv">
+          <div class="pcard-face">
+            <span class="idx"><b>1</b><svg aria-hidden="true"><use href="#s-heart"/></svg></span>
+            <span class="idx idx--br" aria-hidden="true"><b>1</b><svg><use href="#s-heart"/></svg></span>
+            <svg class="pcard-mark" aria-hidden="true"><use href="#s-heart"/></svg>
+            <h3 class="kicker">Первая смена</h3>
+            <p class="time">до 18:30</p>
+            <p class="pcard-text">Встречаем со школы, дальше ребёнок с&nbsp;нами до&nbsp;вечера.</p>
+            <p class="incl"><svg class="ico" aria-hidden="true"><use href="#i-meal"/></svg> Обед и&nbsp;полдник</p>
+            <div class="pcard-foot">
+              <p class="price">22&nbsp;000&nbsp;₽</p>
+              <a class="link-arrow" href="#zapis" data-want="Первая смена">Записаться <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
+        </article>
+        <article class="pcard pcard--spade rv">
+          <div class="pcard-face">
+            <span class="idx"><b>2</b><svg aria-hidden="true"><use href="#s-spade"/></svg></span>
+            <span class="idx idx--br" aria-hidden="true"><b>2</b><svg><use href="#s-spade"/></svg></span>
+            <svg class="pcard-mark" aria-hidden="true"><use href="#s-spade"/></svg>
+            <h3 class="kicker">Вторая смена</h3>
+            <p class="time">с 07:40</p>
+            <p class="pcard-text">Утром ребёнок у&nbsp;нас, потом отводим его в&nbsp;школу.</p>
+            <p class="incl"><svg class="ico" aria-hidden="true"><use href="#i-meal"/></svg> Обед</p>
+            <div class="pcard-foot">
+              <p class="price">15&nbsp;000&nbsp;₽</p>
+              <a class="link-arrow" href="#zapis" data-want="Вторая смена">Записаться <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <p class="limit rv"><svg class="ico" aria-hidden="true"><use href="#i-kids"/></svg> В&nbsp;одной смене максимум <b>10&nbsp;детей</b></p>
+    </div>
+  </section>
+
+  <!-- Что входит в день -->
+  <section class="sec sec--tint" id="den">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="tag">Каждый день</p>
+        <h2>Что входит в&nbsp;продлёнку</h2>
+      </div>
+      <ul class="tiles">
+        <li class="tile rv"><span class="coin"><svg aria-hidden="true"><use href="#i-school"/></svg></span><div><h3>Встретим со школы</h3><p>И&nbsp;проводим на&nbsp;занятия или в&nbsp;кружки.</p></div></li>
+        <li class="tile rv"><span class="coin"><svg aria-hidden="true"><use href="#i-camera"/></svg></span><div><h3>Фотоотчёт каждый день</h3><p>Вы всегда в&nbsp;курсе, чем занят ваш ребёнок.</p></div></li>
+        <li class="tile rv"><span class="coin"><svg aria-hidden="true"><use href="#i-meal"/></svg></span><div><h3>Вкусное питание</h3><p>Полноценный сбалансированный рацион: обед и&nbsp;полдник.</p></div></li>
+        <li class="tile rv"><span class="coin"><svg aria-hidden="true"><use href="#i-book"/></svg></span><div><h3>Помощь с&nbsp;домашним заданием</h3><p>Поддержим и&nbsp;поможем разобраться в&nbsp;заданиях.</p></div></li>
+        <li class="tile rv"><span class="coin"><svg aria-hidden="true"><use href="#i-tree"/></svg></span><div><h3>Прогулки на&nbsp;свежем воздухе</h3><p>Активные игры и&nbsp;отдых каждый день.</p></div></li>
+        <li class="tile rv"><span class="coin"><svg aria-hidden="true"><use href="#i-kids"/></svg></span><div><h3>Сопровождаем в&nbsp;ДЮЦ</h3><p>Отводим ребёнка на&nbsp;занятия в&nbsp;ДЮЦ.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Пробное посещение: часы с выделенным окном 15–17 -->
+  <section class="sec trial" id="probnoe">
+    <div class="wrap trial-grid">
+      <svg class="clock rv" viewBox="0 0 320 320" role="img" aria-label="Часы: время пробного посещения с 15:00 до 17:00">
+        <circle class="clock-rim" cx="160" cy="160" r="150"/>
+        <circle class="clock-face" cx="160" cy="160" r="138"/>
+        <path class="clock-slice" d="M160 160L298 160A138 138 0 0 1 229 279.5Z"/>
+        <path class="clock-ticks" d="M173.8 28.7L173.2 34.7M187.4 30.9L186.2 36.8M200.8 34.5L198.9 40.2M213.7 39.4L211.2 44.9M237.6 53.2L234.1 58.1M248.3 61.9L244.3 66.4M258.1 71.7L253.6 75.7M266.8 82.4L261.9 85.9M280.6 106.3L275.1 108.8M285.5 119.2L279.8 121.1M289.1 132.6L283.2 133.8M291.3 146.2L285.3 146.8M291.3 173.8L285.3 173.2M289.1 187.4L283.2 186.2M285.5 200.8L279.8 198.9M280.6 213.7L275.1 211.2M266.8 237.6L261.9 234.1M258.1 248.3L253.6 244.3M248.3 258.1L244.3 253.6M237.6 266.8L234.1 261.9M213.7 280.6L211.2 275.1M200.8 285.5L198.9 279.8M187.4 289.1L186.2 283.2M173.8 291.3L173.2 285.3M146.2 291.3L146.8 285.3M132.6 289.1L133.8 283.2M119.2 285.5L121.1 279.8M106.3 280.6L108.8 275.1M82.4 266.8L85.9 261.9M71.7 258.1L75.7 253.6M61.9 248.3L66.4 244.3M53.2 237.6L58.1 234.1M39.4 213.7L44.9 211.2M34.5 200.8L40.2 198.9M30.9 187.4L36.8 186.2M28.7 173.8L34.7 173.2M28.7 146.2L34.7 146.8M30.9 132.6L36.8 133.8M34.5 119.2L40.2 121.1M39.4 106.3L44.9 108.8M53.2 82.4L58.1 85.9M61.9 71.7L66.4 75.7M71.7 61.9L75.7 66.4M82.4 53.2L85.9 58.1M106.3 39.4L108.8 44.9M119.2 34.5L121.1 40.2M132.6 30.9L133.8 36.8M146.2 28.7L146.8 34.7"/>
+        <path class="clock-hours" d="M160.0 27.0L160.0 40.0M226.5 44.8L220.0 56.1M275.2 93.5L263.9 100.0M293.0 160.0L280.0 160.0M275.2 226.5L263.9 220.0M226.5 275.2L220.0 263.9M160.0 293.0L160.0 280.0M93.5 275.2L100.0 263.9M44.8 226.5L56.1 220.0M27.0 160.0L40.0 160.0M44.8 93.5L56.1 100.0M93.5 44.8L100.0 56.1"/>
+        <g class="clock-nums">
+          <text x="212.0" y="76.9">1</text><text x="250.1" y="115.0">2</text><text class="hl" x="264.0" y="167.0">3</text><text class="hl" x="250.1" y="219.0">4</text><text class="hl" x="212.0" y="257.1">5</text><text x="160.0" y="271.0">6</text><text x="108.0" y="257.1">7</text><text x="69.9" y="219.0">8</text><text x="56.0" y="167.0">9</text><text x="69.9" y="115.0">10</text><text x="108.0" y="76.9">11</text><text x="160.0" y="63.0">12</text>
+        </g>
+        <path class="clock-arc" d="M310 160A150 150 0 0 1 235 289.9" pathLength="100"/>
+        <line class="hand hand-h" x1="160" y1="160" x2="232" y2="160"/>
+        <line class="hand hand-m" x1="160" y1="160" x2="160" y2="76"/>
+        <circle class="clock-cap" cx="160" cy="160" r="8"/>
+      </svg>
+      <div class="trial-copy rv">
+        <p class="tag">Знакомство</p>
+        <h2>Первое посещение бесплатно</h2>
+        <p class="when"><span class="when-row"><small>с</small>15:00</span> <span class="when-row"><small>до</small>17:00</span></p>
+        <p>Приходите с&nbsp;ребёнком познакомиться с&nbsp;клубом в&nbsp;любой день. Запишитесь заранее, чтобы мы вас ждали.</p>
+        <a class="btn btn-gold btn-lg" href="#zapis" data-want="Бесплатное посещение">Записаться на&nbsp;пробное <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Каникулы: лагерь -->
+  <section class="sec camp" id="kanikuly">
+    <svg class="garland" viewBox="0 0 1200 80" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+      <path class="garland-rope" d="M0 6 Q600 62 1200 6"/>
+      <path fill="#C3262C" d="M26 10.0L64 10.0L45 46.0Z"/><path fill="#F2B82E" d="M100 16.0L138 16.0L119 52.0Z"/><path fill="#1B120C" d="M174 21.1L212 21.1L193 57.1Z"/><path fill="#F2B82E" d="M248 25.4L286 25.4L267 61.4Z"/><path fill="#C3262C" d="M322 28.8L360 28.8L341 64.8Z"/><path fill="#F2B82E" d="M396 31.3L434 31.3L415 67.3Z"/><path fill="#1B120C" d="M470 33.0L508 33.0L489 69.0Z"/><path fill="#F2B82E" d="M544 33.9L582 33.9L563 69.9Z"/><path fill="#C3262C" d="M618 33.9L656 33.9L637 69.9Z"/><path fill="#F2B82E" d="M692 33.0L730 33.0L711 69.0Z"/><path fill="#1B120C" d="M766 31.3L804 31.3L785 67.3Z"/><path fill="#F2B82E" d="M840 28.8L878 28.8L859 64.8Z"/><path fill="#C3262C" d="M914 25.4L952 25.4L933 61.4Z"/><path fill="#F2B82E" d="M988 21.1L1026 21.1L1007 57.1Z"/><path fill="#1B120C" d="M1062 16.0L1100 16.0L1081 52.0Z"/><path fill="#F2B82E" d="M1136 10.0L1174 10.0L1155 46.0Z"/>
+    </svg>
+    <div class="wrap camp-grid">
+      <div class="camp-copy rv">
+        <p class="tag">Каникулы</p>
+        <h2>На&nbsp;каникулах работает лагерь</h2>
+        <p class="camp-time"><svg class="ico" aria-hidden="true"><use href="#i-sun"/></svg><span>с&nbsp;08:00 до&nbsp;18:30</span></p>
+      </div>
+      <div class="ticket rv">
+        <p class="ticket-label">Для детей второй смены</p>
+        <p class="ticket-sum">+500&nbsp;₽</p>
+        <p class="ticket-note">доплата за&nbsp;полный день</p>
+        <a class="link-arrow" href="#zapis" data-want="Лагерь на каникулах">Записаться в&nbsp;лагерь <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Принципы и размер группы -->
+  <section class="sec" id="kak">
+    <div class="wrap trust">
+      <div class="trust-num rv">
+        <p class="big10" aria-hidden="true">10</p>
+        <h2>Маленькие группы и&nbsp;домашняя атмосфера</h2>
+        <p class="trust-lead">В&nbsp;одной смене не больше десяти детей.</p>
+      </div>
+      <ul class="principles">
+        <li class="pr rv"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg><span>Безопасность на&nbsp;первом месте</span></li>
+        <li class="pr rv"><svg class="ico" aria-hidden="true"><use href="#i-person"/></svg><span>Индивидуальный подход</span></li>
+        <li class="pr rv"><svg class="ico" aria-hidden="true"><use href="#i-star"/></svg><span>Интересно, полезно, <span class="nw">по-домашнему</span></span></li>
+        <li class="pr rv"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg><span>Доброжелательная атмосфера</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Адреса -->
+  <section class="sec sec--tint" id="adresa">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="tag">Где мы</p>
+        <h2>Два адреса</h2>
+      </div>
+      <div class="addr">
+        <article class="acard rv">
+          <span class="acard-num">01</span>
+          <svg class="acard-pin" aria-hidden="true"><use href="#i-pin"/></svg>
+          <h3>ул. Станкостроительная,&nbsp;1</h3>
+          <div class="acard-links">
+            <a class="btn btn-gold btn-sm" href="https://yandex.ru/maps/?text=Краснодар,%20улица%20Станкостроительная,%201" target="_blank" rel="noopener">Яндекс Карты</a>
+            <a class="btn btn-ghost-dark btn-sm" href="https://2gis.ru/search/Краснодар,%20улица%20Станкостроительная,%201" target="_blank" rel="noopener">2ГИС</a>
+          </div>
+        </article>
+        <article class="acard rv">
+          <span class="acard-num">02</span>
+          <svg class="acard-pin" aria-hidden="true"><use href="#i-pin"/></svg>
+          <h3>ул.&nbsp;Советская, 40</h3>
+          <div class="acard-links">
+            <a class="btn btn-gold btn-sm" href="https://yandex.ru/maps/?text=Краснодар,%20улица%20Советская,%2040" target="_blank" rel="noopener">Яндекс Карты</a>
+            <a class="btn btn-ghost-dark btn-sm" href="https://2gis.ru/search/Краснодар,%20улица%20Советская,%2040" target="_blank" rel="noopener">2ГИС</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Запись: форма собирает текст заявки и отдаёт его в MAX -->
+  <section class="sec book" id="zapis">
+    <div class="wrap book-grid">
+      <div class="book-copy rv">
+        <p class="tag">Запись</p>
+        <h2>Записаться в&nbsp;клуб</h2>
+        <p>Заполните форму, и&nbsp;заявка будет готова к&nbsp;отправке администратору в&nbsp;MAX. Удобнее голосом? Позвоните.</p>
+        <ul class="phones">
+          <li><a href="tel:+79330512500"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>8 933 051-25-00</a><span>звонки и&nbsp;MAX</span></li>
+          <li><a href="tel:+79184479797"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>8 918 447-97-97</a><span>звонки</span></li>
+        </ul>
+      </div>
+
+      <form class="form rv" id="bookForm" novalidate>
+        <div class="form-body">
+          <fieldset class="field">
+            <legend class="legend">Что вас интересует</legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="want" value="Бесплатное посещение" checked><span>Бесплатное посещение</span></label>
+              <label class="chip"><input type="radio" name="want" value="Первая смена"><span>Первая смена</span></label>
+              <label class="chip"><input type="radio" name="want" value="Вторая смена"><span>Вторая смена</span></label>
+              <label class="chip"><input type="radio" name="want" value="Лагерь на каникулах"><span>Лагерь на&nbsp;каникулах</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="field">
+            <legend class="legend">Адрес</legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="place" value="ул. Станкостроительная, 1" checked><span>Станкостроительная, 1</span></label>
+              <label class="chip"><input type="radio" name="place" value="ул. Советская, 40"><span>Советская, 40</span></label>
+              <label class="chip"><input type="radio" name="place" value="Подскажите, какой ближе"><span>Не знаю, подскажите</span></label>
+            </div>
+          </fieldset>
+          <div class="row2">
+            <div class="field">
+              <label for="f-name">Ваше имя</label>
+              <input class="input" id="f-name" name="name" type="text" autocomplete="given-name" required aria-describedby="e-name">
+              <p class="err" id="e-name" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="f-phone">Телефон</label>
+              <input class="input" id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="8 900 000-00-00" required aria-describedby="e-phone">
+              <p class="err" id="e-phone" aria-live="polite"></p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-child">Ребёнок <span class="opt">имя и&nbsp;класс, по желанию</span></label>
+            <input class="input" id="f-child" name="child" type="text" autocomplete="off" placeholder="Например: Миша, 2 класс">
+          </div>
+          <div class="field">
+            <label for="f-note">Комментарий <span class="opt">по желанию</span></label>
+            <textarea class="input" id="f-note" name="note" rows="3"></textarea>
+          </div>
+          <label class="check">
+            <input type="checkbox" name="agree" id="f-agree" required aria-describedby="e-agree">
+            <span>Я&nbsp;соглашаюсь с&nbsp;<a href="privacy.html" target="_blank">политикой конфиденциальности</a> и&nbsp;даю <a href="consent.html" target="_blank">согласие на&nbsp;обработку персональных данных</a></span>
+          </label>
+          <p class="err" id="e-agree" aria-live="polite"></p>
+          <button class="btn btn-red btn-lg btn-block" type="submit"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg> Подготовить заявку для MAX</button>
+          <p class="form-note">Форма ничего не отправляет сама и&nbsp;не хранит данные: она собирает текст заявки, а&nbsp;отправляете его вы.</p>
+        </div>
+
+        <div class="sent" id="sent" tabindex="-1" aria-live="polite">
+          <p class="sent-title" id="sentTitle">Заявка готова</p>
+          <ol class="sent-steps">
+            <li id="stepCopy">Текст заявки скопирован.</li>
+            <li id="stepOpen">Откройте MAX, нажмите «Контакты», затем «+» и&nbsp;«Найти по&nbsp;номеру»: <b>8 933 051-25-00</b>.</li>
+            <li>Вставьте сообщение в&nbsp;чат и&nbsp;отправьте.</li>
+          </ol>
+          <label class="sent-label" for="sentText">Текст заявки</label>
+          <textarea class="input sent-text" id="sentText" rows="7" readonly></textarea>
+          <div class="sent-actions">
+            <a class="btn btn-red btn-lg" id="maxLink" href="#" target="_blank" rel="noopener" hidden><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg> Открыть чат в&nbsp;MAX</a>
+            <button class="btn btn-ink btn-lg" type="button" id="copyAgain"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg> Скопировать ещё раз</button>
+            <button class="btn btn-plain" type="button" id="editAgain">Изменить заявку</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#" aria-label="Мафия.Дети, наверх">
+          <img src="assets/img/logo-160.webp" width="56" height="56" alt="" loading="lazy">
+          <span class="brand-text"><b>Мафия<span>.Дети</span></b><small>детский клуб</small></span>
+        </a>
+        <p>Продлёнка в&nbsp;две смены и&nbsp;лагерь на&nbsp;каникулах.</p>
+      </div>
+      <div>
+        <p class="foot-h">Контакты</p>
+        <p><a href="tel:+79330512500">8 933 051-25-00</a><br><a href="tel:+79184479797">8 918 447-97-97</a></p>
+        <p>ул.&nbsp;Станкостроительная, 1<br>ул.&nbsp;Советская, 40</p>
+      </div>
+      <div>
+        <p class="foot-h">Реквизиты</p>
+        <p class="req">ИП Овчарова Евгения Гаригеновна<br>ИНН 230910700182<br>ОГРНИП 326237500234742<br>ОКВЭД 88.91: предоставление услуг по&nbsp;дневному уходу за&nbsp;детьми</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> Детский клуб «Мафия.Дети»</span>
+      <span class="foot-links"><a href="privacy.html">Политика конфиденциальности</a><a href="consent.html">Согласие на&nbsp;обработку данных</a><button class="linklike" type="button" data-cookie-open>Настройки cookie</button></span>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Файлы cookie">
+  <p>Мы используем файлы cookie, чтобы сайт работал корректно. Подробнее в&nbsp;<a href="privacy.html#cookie">политике конфиденциальности</a>.</p>
+  <div class="cookie-row">
+    <button class="btn btn-gold btn-sm" type="button" data-cookie="all">Принять все</button>
+    <button class="btn btn-ghost-dark btn-sm" type="button" data-cookie="necessary">Только необходимые</button>
+  </div>
+</div>
+
+<script src="main.js" defer></script>
+</body>
+</html>
