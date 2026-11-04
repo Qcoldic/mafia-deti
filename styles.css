@@ -119,10 +119,10 @@ button{font:inherit}
 .hero h1{margin:.14em 0 .22em;font:800 clamp(36px,11vw,84px)/.98 var(--display);letter-spacing:-.025em;background:linear-gradient(180deg,#FFF0C2 0%,#FFD56A 38%,#F2B82E 62%,#C98A12 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 3px 0 rgba(0,0,0,.35))}
 .lead{max-width:34ch;font-size:clamp(17px,1.6vw,20px);line-height:1.5;color:var(--on-ink-muted)}
 .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:32px 0 0;padding-top:22px;border-top:1px solid rgba(242,184,46,.22)}
-.facts div{min-width:0}
-.facts dt{font:700 clamp(20px,3vw,30px)/1 var(--display);color:var(--gold);white-space:nowrap}
-.facts dd{margin:8px 0 0;font-size:13.5px;line-height:1.35;color:var(--on-ink-muted)}
+.facts{display:flex;align-items:center;gap:16px;margin:32px 0 0;padding-top:22px;border-top:1px solid rgba(242,184,46,.22)}
+.facts-num{margin:0;font:700 clamp(30px,4vw,40px)/1 var(--display);color:var(--gold);white-space:nowrap}
+.facts-text{margin:0;min-width:0;font-size:14.5px;line-height:1.4;color:var(--on-ink-muted)}
+.facts-text b{display:block;margin-top:2px;font-size:16px;font-weight:600;color:var(--on-ink)}
 .skyline{display:block;width:100%;height:clamp(96px,14vw,190px);margin-top:clamp(28px,5vw,48px)}
 .skyline .bld{fill:#0E0906}
 .skyline .crown{fill:var(--gold)}
@@ -154,39 +154,50 @@ button{font:inherit}
 h2{margin:.42em 0 .45em;font:800 clamp(27px,4.4vw,50px)/1.1 var(--display);letter-spacing:-.018em;text-wrap:balance}
 .sec-head h2{margin-bottom:.4em}
 
-/* ===== Смены: игральные карты ===== */
-.shifts{display:grid;gap:44px;max-width:980px}
-@media (min-width:760px){.shifts{grid-template-columns:1fr 1fr;gap:48px}}
-.pcard{position:relative;isolation:isolate}
-/* рубашка карты, выглядывает из-под лица */
-.pcard::before{content:'';position:absolute;inset:0;z-index:-1;border-radius:var(--radius);border:6px solid var(--card);background:repeating-linear-gradient(45deg, rgba(242,184,46,.42) 0 2px, transparent 2px 13px), repeating-linear-gradient(-45deg, rgba(242,184,46,.42) 0 2px, transparent 2px 13px), var(--red);box-shadow:0 18px 34px -22px rgba(70,36,6,.6);transform:rotate(3deg) translate(6px,8px);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
-.pcard--spade::before{background:repeating-linear-gradient(45deg, rgba(242,184,46,.35) 0 2px, transparent 2px 13px), repeating-linear-gradient(-45deg, rgba(242,184,46,.35) 0 2px, transparent 2px 13px), var(--ink)}
-.pcard-face{position:relative;overflow:hidden;height:100%;padding:40px 30px 30px 64px;border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow-card);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
-.pcard-face::before{content:'';position:absolute;inset:9px;border:1.5px solid var(--gold-edge);border-radius:15px;pointer-events:none}
-.pcard:hover .pcard-face{transform:translateY(-6px) rotate(-1deg)}
-.pcard:hover::before{transform:rotate(6deg) translate(14px,10px)}
-.idx{position:absolute;top:22px;left:22px;display:grid;justify-items:center;gap:4px;color:var(--red)}
-.idx b{font:800 24px/1 var(--display)}
-.idx svg{width:18px;height:18px}
-.idx--br{top:auto;left:auto;right:22px;bottom:22px;transform:rotate(180deg)}
-.pcard--spade .idx{color:var(--text)}
-.pcard-mark{position:absolute;right:-34px;top:50%;width:230px;height:230px;transform:translateY(-50%) rotate(-12deg);color:rgba(195,38,44,.045);pointer-events:none}
-.pcard--spade .pcard-mark{color:rgba(43,26,16,.035)}
+/* ===== Смены: город вечером и утром ===== */
+.shifts{display:grid;gap:24px;max-width:980px}
+@media (min-width:760px){.shifts{grid-template-columns:1fr 1fr;gap:28px}}
+.shift{display:flex;flex-direction:column;overflow:hidden;border-radius:var(--radius);background:var(--card);border:1px solid var(--gold-edge);box-shadow:var(--shadow-card)}
+.shift:hover,.js .shift.rv.in:hover{transform:translateY(-6px)}
+.scene{display:block;width:100%;height:clamp(118px,13vw,150px)}
+.scene .crown{fill:var(--gold)}
+.scene .gem{fill:var(--red)}
+.scene .lit{fill:var(--gold)}
+.scene .star{fill:#FFE7A6}
+.scene .cloud{fill:#FFFBF2}
+.scene--evening .bld{fill:#2B1A10}
+.scene--evening .win{fill:#4A3020}
+.scene--morning .bld{fill:#C9A386}
+.scene--morning .win{fill:#EED9C2}
+/* при появлении карточки утреннее солнце встаёт, вечернее садится, в окнах зажигается свет */
+.scene .sun{transition:transform 1.4s cubic-bezier(.2,.7,.2,1) .25s}
+.scene--evening .lit{transition:opacity .45s ease var(--d,0s)}
+.js .shift.rv .scene--morning .sun{transform:translateY(26px)}
+.js .shift.rv .scene--evening .sun{transform:translateY(-22px)}
+.js .shift.rv .scene--evening .lit{opacity:0}
+.js .shift.rv.in .scene .sun{transform:none}
+.js .shift.rv.in .scene--evening .lit{opacity:1}
+.shift-body{display:flex;flex-direction:column;flex:1;padding:0 28px 28px}
+.shift-num{position:relative;margin:-28px 0 16px;font:800 24px/1 var(--display)}
 .kicker{margin:0;font:700 13px/1.2 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep)}
 .time{margin:.32em 0 .3em;font:800 clamp(40px,6vw,62px)/1 var(--display);letter-spacing:-.03em;white-space:nowrap}
-.pcard-text{max-width:28ch;color:var(--muted)}
-.incl{display:inline-flex;align-items:center;gap:8px;margin:0;padding:8px 14px;border-radius:999px;background:var(--paper-2);font-weight:600;font-size:15px}
+.shift-text{max-width:30ch;color:var(--muted)}
+.incl{display:inline-flex;align-items:center;align-self:flex-start;gap:8px;margin:0 0 28px;padding:8px 14px;border-radius:16px;background:var(--paper-2);font-weight:600;font-size:15px}
 .incl .ico{color:var(--gold-deep)}
-.pcard-foot{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px 20px;margin-top:28px;padding-top:22px;border-top:1.5px dashed var(--gold-edge);padding-right:34px}
+.shift-foot{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px 20px;margin-top:auto;padding-top:22px;border-top:1.5px dashed var(--gold-edge)}
 .price{margin:0;font:800 clamp(30px,3.6vw,38px)/1 var(--display);letter-spacing:-.02em}
-.limit{display:inline-flex;align-items:center;gap:12px;margin:clamp(40px,5vw,56px) 0 0;padding:14px 22px;border-radius:999px;background:var(--ink);color:var(--on-ink);font-size:16px}
-.limit b{color:var(--gold);font-weight:700}
-.limit .ico{color:var(--gold);width:24px;height:24px}
+.price small,.dayrate-price small{font:600 15px/1 var(--body);letter-spacing:0;color:var(--muted)}
+.dayrate{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;max-width:980px;margin-top:24px;padding:18px 24px;border-radius:20px;background:var(--ink);color:var(--on-ink)}
+@media (min-width:760px){.dayrate{margin-top:28px}}
+.dayrate .coin{width:48px;height:48px}
+.dayrate .coin svg{width:24px;height:24px}
+.dayrate-label{flex:1 1 auto;margin:0;font:700 16px/1.3 var(--display)}
+.dayrate-price{margin:0;font:800 clamp(24px,3vw,30px)/1 var(--display);color:var(--gold);white-space:nowrap}
+.dayrate-price small{color:var(--on-ink-muted)}
+.dayrate .link-arrow{color:var(--gold-2)}
 @media (max-width:420px){
-  .pcard-face{padding:76px 22px 26px}
-  .pcard::before{transform:rotate(2deg) translate(4px,8px)}
-  .pcard-foot{padding-right:30px}
-  .limit{border-radius:18px;align-items:flex-start}
+  .shift-body{padding:0 22px 24px}
+  .dayrate{padding:18px 20px}
 }
 
 /* ===== Что входит: монеты-иконки ===== */
@@ -199,6 +210,8 @@ h2{margin:.42em 0 .45em;font:800 clamp(27px,4.4vw,50px)/1.1 var(--display);lette
 .coin svg{width:28px;height:28px}
 .tile h3{margin:3px 0 6px;font:700 17px/1.3 var(--display);letter-spacing:-.005em}
 .tile p{margin:0;font-size:16px;color:var(--muted)}
+.extra{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin:20px 0 0;padding:18px 22px;border-radius:18px;border:2px dashed rgba(195,38,44,.35);background:rgba(255,251,244,.6);font-size:16px}
+.extra-label{font:700 12px/1.3 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--red-deep)}
 
 /* ===== Пробное посещение ===== */
 .trial{position:relative;background:var(--ink);color:var(--on-ink)}
@@ -248,16 +261,15 @@ h2{margin:.42em 0 .45em;font:800 clamp(27px,4.4vw,50px)/1.1 var(--display);lette
 
 /* ===== Принципы ===== */
 .trust{display:grid;gap:36px}
-@media (min-width:900px){.trust{grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}}
-.big10{margin:0;font:800 clamp(120px,20vw,230px)/.82 var(--display);letter-spacing:-.06em;background:linear-gradient(180deg,#F7C64A 0%,#D9971A 60%,#A86B0C 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.trust-num h2{margin-top:.35em}
-.trust-lead{margin:0;font-size:clamp(17px,1.6vw,19px);color:var(--muted)}
+/* «Доброжелательная» в Unbounded 16px шириной ~210px: карточке нужно от ~256px, отсюда пороги колонок */
+@media (min-width:1080px){.trust{grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:64px;align-items:center}}
+.trust-head h2{margin-bottom:0}
 .principles{list-style:none;display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
-@media (min-width:480px){.principles{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}}
+@media (min-width:600px){.principles{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}}
 .nw{white-space:nowrap}
-.pr{display:flex;flex-direction:column;gap:18px;padding:24px;border-radius:20px;background:var(--card);border:1px solid var(--gold-edge);font:700 16px/1.35 var(--display);letter-spacing:-.005em;hyphens:auto}
+.pr{display:flex;flex-direction:column;gap:18px;padding:24px;border-radius:20px;background:var(--card);border:1px solid var(--gold-edge);font:700 16px/1.35 var(--display);letter-spacing:-.005em}
 .pr .ico{width:32px;height:32px;color:var(--red)}
-@media (max-width:479px){.pr{flex-direction:row;align-items:center;gap:16px;padding:18px 20px}}
+@media (max-width:599px){.pr{flex-direction:row;align-items:center;gap:16px;padding:18px 20px}}
 /* самые узкие телефоны: длинные слова вроде «Доброжелательная» не должны распирать карточки */
 @media (max-width:359px){
   .tile{padding:20px 18px;gap:14px}

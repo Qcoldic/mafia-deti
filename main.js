@@ -8,7 +8,7 @@ const CLUB = {
   maxPhone: '8 933 051-25-00',
 };
 
-// ---------- Ночной город на первом экране ----------
+// ---------- Город: ночной на первом экране, вечер и утро в карточках смен ----------
 // Генератор с зерном: силуэт один и тот же при каждой загрузке
 function rng(seed) {
   return () => {
@@ -19,14 +19,17 @@ function rng(seed) {
   };
 }
 
-function buildSkyline(svg) {
-  const W = 1440, H = 200, r = rng(11);
+// Дома считаются в масштабе первого экрана; карточки уменьшают готовый город через scale.
+// o: W, H, seed, clubAt (где дом с короной, доля ширины), lit (доля горящих окон),
+// twinkle (доля мигающих), delay0 и delaySpan (когда окна загораются)
+function cityParts(o) {
+  const { W, H } = o, r = rng(o.seed), clubX = W * o.clubAt;
   const parts = [];
   let x = -8;
   while (x < W + 8) {
     const w = 58 + Math.round(r() * 66);
-    // дом посередине выше всех и с короной, как на логотипе
-    const isClub = x <= W / 2 && x + w >= W / 2;
+    // дом клуба выше всех и с короной, как на логотипе
+    const isClub = x <= clubX && x + w >= clubX;
     const h = isClub ? 168 : 62 + Math.round(r() * 98);
     const y = H - h;
     parts.push(`<rect class="bld" x="${x}" y="${y}" width="${w}" height="${h + 2}"/>`);
@@ -46,19 +49,32 @@ function buildSkyline(svg) {
       for (let c = 0; c < cols; c++) {
         const wx = (x + gap + c * (9 + gap)).toFixed(1);
         parts.push(`<rect class="win" x="${wx}" y="${wy}" width="9" height="12" rx="1.5"/>`);
-        if (r() < 0.42) {
-          const tw = r() < 0.08 ? ' tw' : '';
-          parts.push(`<rect class="lit${tw}" x="${wx}" y="${wy}" width="9" height="12" rx="1.5" style="--d:${(0.3 + r() * 2.8).toFixed(2)}s"/>`);
+        if (r() < o.lit) {
+          const tw = r() < o.twinkle ? ' tw' : '';
+          parts.push(`<rect class="lit${tw}" x="${wx}" y="${wy}" width="9" height="12" rx="1.5" style="--d:${(o.delay0 + r() * o.delaySpan).toFixed(2)}s"/>`);
         }
       }
     }
     x += w + (r() < 0.25 ? 5 : 0);
   }
-  svg.innerHTML = parts.join('');
+  return parts.join('');
 }
 
 const skyline = document.querySelector('.skyline');
-if (skyline) buildSkyline(skyline);
+if (skyline) {
+  skyline.innerHTML = cityParts({ W: 1440, H: 200, seed: 11, clubAt: 0.5, lit: 0.42, twinkle: 0.08, delay0: 0.3, delaySpan: 2.8 });
+}
+
+// Карточки смен: вечером свет горит почти везде, утром почти нигде
+const SCENE_CITY = {
+  evening: { seed: 7, clubAt: 0.66, lit: 0.5 },
+  morning: { seed: 3, clubAt: 0.34, lit: 0.1 },
+};
+document.querySelectorAll('.scene .city').forEach((g) => {
+  const k = 0.55, cfg = SCENE_CITY[g.dataset.city];
+  g.setAttribute('transform', `scale(${k})`);
+  g.innerHTML = cityParts({ W: 400 / k, H: 150 / k, ...cfg, twinkle: 0, delay0: 0.3, delaySpan: 1.4 });
+});
 
 // ---------- Появление при скролле ----------
 // IntersectionObserver плюс ручной расчёт по скроллу: страховка, если IO молчит
