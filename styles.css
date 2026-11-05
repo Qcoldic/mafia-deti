@@ -331,6 +331,14 @@ textarea.input{min-height:96px;padding:14px 16px;resize:vertical}
 .form.is-sent .form-body{display:none}
 .form.is-sent .sent{display:block}
 .sent:focus{outline:none}
+.done{display:none}
+.form.is-done .form-body{display:none}
+.form.is-done .done{display:block}
+.done:focus{outline:none}
+.done-text{margin:0 0 18px;color:var(--muted)}
+.done-text b{color:var(--text);white-space:nowrap}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+#bookSubmit[disabled]{opacity:.7;cursor:progress}
 .sent-title{margin:0 0 16px;font:800 clamp(24px,3vw,30px)/1.15 var(--display)}
 .sent-steps{display:grid;gap:10px;margin:0 0 22px;padding-left:22px;color:var(--muted)}
 .sent-steps li::marker{color:var(--red);font-weight:700}

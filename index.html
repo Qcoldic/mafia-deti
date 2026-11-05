@@ -286,13 +286,13 @@
     </div>
   </section>
 
-  <!-- Запись: форма собирает текст заявки и отдаёт его в MAX -->
+  <!-- Запись: форма шлёт заявку в api/lead.php (почта и MAX). Нет сервера или сбой: собирает текст, родитель отправляет его сам -->
   <section class="sec book" id="zapis">
     <div class="wrap book-grid">
       <div class="book-copy rv">
         <p class="tag">Запись</p>
         <h2>Записаться в&nbsp;клуб</h2>
-        <p>Заполните форму, и&nbsp;заявка будет готова к&nbsp;отправке администратору в&nbsp;MAX. Удобнее голосом? Позвоните.</p>
+        <p id="bookLead">Заполните форму и&nbsp;нажмите «Отправить заявку»: она сразу придёт администратору. Удобнее голосом? Позвоните.</p>
         <ul class="phones">
           <li><a href="tel:+79330512500"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>8 933 051-25-00</a><span>звонки и&nbsp;MAX</span></li>
           <li><a href="tel:+79184479797"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>8 918 447-97-97</a><span>звонки</span></li>
@@ -323,7 +323,7 @@
           <div class="row2">
             <div class="field">
               <label for="f-name">Ваше имя</label>
-              <input class="input" id="f-name" name="name" type="text" autocomplete="given-name" required aria-describedby="e-name">
+              <input class="input" id="f-name" name="name" type="text" autocomplete="given-name" maxlength="100" required aria-describedby="e-name">
               <p class="err" id="e-name" aria-live="polite"></p>
             </div>
             <div class="field">
@@ -334,23 +334,32 @@
           </div>
           <div class="field">
             <label for="f-child">Ребёнок <span class="opt">имя, школа и&nbsp;класс, по желанию</span></label>
-            <input class="input" id="f-child" name="child" type="text" autocomplete="off" placeholder="Миша, школа 12, 2 класс">
+            <input class="input" id="f-child" name="child" type="text" autocomplete="off" maxlength="200" placeholder="Миша, школа 12, 2 класс">
           </div>
           <div class="field">
             <label for="f-note">Комментарий <span class="opt">по желанию</span></label>
-            <textarea class="input" id="f-note" name="note" rows="3"></textarea>
+            <textarea class="input" id="f-note" name="note" rows="3" maxlength="1000"></textarea>
           </div>
+          <!-- Ловушка для ботов: человек этого поля не видит -->
+          <div class="hp" aria-hidden="true"><label>Это поле заполнять не нужно <input type="text" name="hp_field" tabindex="-1" autocomplete="off"></label></div>
           <label class="check">
             <input type="checkbox" name="agree" id="f-agree" required aria-describedby="e-agree">
             <span>Я&nbsp;соглашаюсь с&nbsp;<a href="privacy.html" target="_blank">политикой конфиденциальности</a> и&nbsp;даю <a href="consent.html" target="_blank">согласие на&nbsp;обработку персональных данных</a></span>
           </label>
           <p class="err" id="e-agree" aria-live="polite"></p>
-          <button class="btn btn-red btn-lg btn-block" type="submit"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg> Подготовить заявку для MAX</button>
-          <p class="form-note">Форма ничего не отправляет сама и&nbsp;не хранит данные: она собирает текст заявки, а&nbsp;отправляете его вы.</p>
+          <button class="btn btn-red btn-lg btn-block" type="submit" id="bookSubmit"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg> <span id="bookSubmitLabel">Отправить заявку</span></button>
+          <p class="form-note" id="bookNote">Заявка сразу придёт администратору. На&nbsp;сайте данные не&nbsp;хранятся.</p>
+        </div>
+
+        <div class="done" id="done" tabindex="-1" aria-live="polite">
+          <p class="sent-title">Заявка отправлена</p>
+          <p class="done-text">Администратор свяжется с&nbsp;вами по&nbsp;телефону <b id="donePhone"></b>.</p>
+          <button class="btn btn-plain" type="button" id="doneAgain">Отправить ещё одну заявку</button>
         </div>
 
         <div class="sent" id="sent" tabindex="-1" aria-live="polite">
           <p class="sent-title" id="sentTitle">Заявка готова</p>
+          <p class="done-text" id="sentHint" hidden>Заявка не потеряется: отправьте её администратору сами, это займёт минуту.</p>
           <ol class="sent-steps">
             <li id="stepCopy">Текст заявки скопирован.</li>
             <li id="stepOpen">Откройте MAX, нажмите «Контакты», затем «+» и&nbsp;«Найти по&nbsp;номеру»: <b>8 933 051-25-00</b>.</li>

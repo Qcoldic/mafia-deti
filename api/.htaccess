@@ -1,0 +1,6 @@
+# Снаружи доступен только обработчик заявки: настройки, счётчики и журнал закрыты
+Options -Indexes
+Require all denied
+<Files "lead.php">
+  Require all granted
+</Files>

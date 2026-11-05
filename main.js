@@ -3,9 +3,11 @@
 // Настройки клуба. Ссылку на профиль MAX владелица берёт в приложении:
 // «Профиль» → значок QR → «Скопировать ссылку» (вид https://max.ru/u/...).
 // Пока ссылки нет, после заявки показываем поиск по номеру.
+// leadEndpoint: куда форма отправляет заявку. На GitHub Pages сервера нет, там остаётся ручной путь через MAX.
 const CLUB = {
   maxProfile: '',
   maxPhone: '8 933 051-25-00',
+  leadEndpoint: location.hostname.endsWith('github.io') ? '' : 'api/lead.php',
 };
 
 // ---------- Город: ночной на первом экране, вечер и утро в карточках смен ----------
@@ -147,6 +149,20 @@ if (form) {
   const stepOpen = document.getElementById('stepOpen');
   const maxLink = document.getElementById('maxLink');
   const sent = document.getElementById('sent');
+  const sentTitle = document.getElementById('sentTitle');
+  const sentHint = document.getElementById('sentHint');
+  const done = document.getElementById('done');
+  const submitBtn = document.getElementById('bookSubmit');
+  const submitLabel = document.getElementById('bookSubmitLabel');
+  const formStart = Date.now();
+  let sending = false;
+
+  // В HTML тексты для автоматической отправки. Без сервера возвращаем ручной путь
+  if (!CLUB.leadEndpoint) {
+    document.getElementById('bookLead').textContent = 'Заполните форму, и заявка будет готова к отправке администратору в MAX. Удобнее голосом? Позвоните.';
+    document.getElementById('bookNote').textContent = 'Форма ничего не отправляет сама и не хранит данные: она собирает текст заявки, а отправляете его вы.';
+    submitLabel.textContent = 'Подготовить заявку для MAX';
+  }
 
   if (CLUB.maxProfile) {
     maxLink.href = CLUB.maxProfile;
@@ -191,9 +207,62 @@ if (form) {
     if (d.length === 10) f.phone.value = formatPhone(d);
   });
 
+  // Отправка на сервер. Любой сбой значит false, и родитель уходит на ручной путь
+  async function sendLead() {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 25000);
+    try {
+      const res = await fetch(CLUB.leadEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        signal: ctrl.signal,
+        body: JSON.stringify({
+          want: f.want.value,
+          place: f.place.value,
+          name: f.name.value.trim(),
+          phone: phoneDigits(f.phone.value),
+          child: f.child.value.trim(),
+          note: f.note.value.trim(),
+          agree: f.agree.checked,
+          hp_field: f.hp_field.value,
+          elapsed: Date.now() - formStart,
+        }),
+      });
+      const data = await res.json();
+      return res.ok && data.ok === true;
+    } catch (_) {
+      return false;
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    if (!validate()) return;
+    if (sending || !validate()) return;
+
+    let autoFailed = false;
+    if (CLUB.leadEndpoint) {
+      sending = true;
+      submitBtn.disabled = true;
+      submitLabel.textContent = 'Отправляем…';
+      const delivered = await sendLead();
+      sending = false;
+      submitBtn.disabled = false;
+      submitLabel.textContent = 'Отправить заявку';
+      if (delivered) {
+        document.getElementById('donePhone').textContent = formatPhone(phoneDigits(f.phone.value));
+        form.classList.add('is-done');
+        form.reset();
+        done.focus({ preventScroll: true });
+        form.scrollIntoView({ block: 'start' });
+        return;
+      }
+      autoFailed = true;
+    }
+
+    sentTitle.textContent = autoFailed ? 'Не получилось отправить заявку' : 'Заявка готова';
+    sentHint.hidden = !autoFailed;
 
     const lines = [
       'Здравствуйте! Заявка с сайта «Мафия.Дети».',
@@ -230,6 +299,11 @@ if (form) {
 
   document.getElementById('editAgain').addEventListener('click', () => {
     form.classList.remove('is-sent');
+    f.name.focus();
+  });
+
+  document.getElementById('doneAgain').addEventListener('click', () => {
+    form.classList.remove('is-done');
     f.name.focus();
   });
 }
