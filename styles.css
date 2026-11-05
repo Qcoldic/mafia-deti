@@ -133,7 +133,8 @@ button{font:inherit}
 @media (min-width:960px){
   .hero-grid{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:40px}
   .hero-art{order:2;width:min(100%,520px)}
-  .hero h1{font-size:clamp(60px,6.4vw,92px)}
+  /* «Продлёнка» шире кегля в 7,2 раза, колонка 616px: больше 84px слово обрежется (текст с background-clip не рисуется за границей блока) */
+  .hero h1{font-size:clamp(60px,6.4vw,84px)}
 }
 
 /* ===== Лента с девизом ===== */
