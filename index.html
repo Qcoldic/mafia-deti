@@ -42,6 +42,7 @@
     <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7.6-4.6-7.6-10.2A4.3 4.3 0 0 1 12 7.1a4.3 4.3 0 0 1 7.6 2.7C19.6 15.4 12 20 12 20z"/></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.3s-6.6-6.1-6.6-11.1a6.6 6.6 0 0 1 13.2 0c0 5-6.6 11.1-6.6 11.1z"/><circle cx="12" cy="10.2" r="2.4"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5.1 3.6h3.1l1.6 4.1-2 1.3a10.4 10.4 0 0 0 5.2 5.2l1.3-2 4.1 1.6v3.1a2 2 0 0 1-2.2 2C9.6 18.4 5.6 14.4 3.1 7.8a2 2 0 0 1 2-4.2z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.6 7.4 12 13.2l8.4-5.8"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4L7 7M17 17l1.6 1.6M5.4 18.6L7 17M17 7l1.6-1.6"/></symbol>
     <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h16v10.6H9.4L4 20V5.5z"/><path d="M8 9.6h8M8 12.6h5"/></symbol>
     <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8.5" y="8.5" width="11.5" height="11.5" rx="2"/><path d="M15.5 8.5V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v9.5a1 1 0 0 0 1 1h3.5"/></symbol>
@@ -191,10 +192,10 @@
     </div>
   </section>
 
-  <!-- Пробное посещение: часы с выделенным окном 15–17 -->
+  <!-- Услуга «Знакомство»: часы с выделенным окном 15–17 -->
   <section class="sec trial" id="probnoe">
     <div class="wrap trial-grid">
-      <svg class="clock rv" viewBox="0 0 320 320" role="img" aria-label="Часы: время пробного посещения с 15:00 до 17:00">
+      <svg class="clock rv" viewBox="0 0 320 320" role="img" aria-label="Часы: услуга «Знакомство» с 15:00 до 17:00">
         <circle class="clock-rim" cx="160" cy="160" r="150"/>
         <circle class="clock-face" cx="160" cy="160" r="138"/>
         <path class="clock-slice" d="M160 160L298 160A138 138 0 0 1 229 279.5Z"/>
@@ -209,8 +210,8 @@
         <circle class="clock-cap" cx="160" cy="160" r="8"/>
       </svg>
       <div class="trial-copy rv">
-        <p class="tag">Знакомство</p>
-        <h2>Первое посещение бесплатно</h2>
+        <p class="tag">Услуга «Знакомство»</p>
+        <h2>Первые 2&nbsp;часа в&nbsp;нашем клубе<br>в&nbsp;подарок!&nbsp;<span aria-hidden="true">🎁</span></h2>
         <p class="when"><span class="when-row"><small>с</small>15:00</span> <span class="when-row"><small>до</small>17:00</span></p>
         <p>Приходите с&nbsp;ребёнком познакомиться с&nbsp;клубом в&nbsp;любой день. Запишитесь заранее, чтобы мы вас ждали.</p>
         <a class="btn btn-gold btn-lg" href="#zapis" data-want="Бесплатное посещение">Записаться на&nbsp;пробное <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
@@ -295,6 +296,7 @@
         <ul class="phones">
           <li><a href="tel:+79330512500"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>8 933 051-25-00</a><span>звонки и&nbsp;MAX</span></li>
           <li><a href="tel:+79184479797"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>8 918 447-97-97</a><span>звонки</span></li>
+          <li><a class="phones-mail" href="mailto:89184479797@mail.ru"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>89184479797@mail.ru</a><span>почта</span></li>
         </ul>
       </div>
 
@@ -380,7 +382,7 @@
       </div>
       <div>
         <p class="foot-h">Контакты</p>
-        <p><a href="tel:+79330512500">8 933 051-25-00</a><br><a href="tel:+79184479797">8 918 447-97-97</a></p>
+        <p><a href="tel:+79330512500">8 933 051-25-00</a><br><a href="tel:+79184479797">8 918 447-97-97</a><br><a href="mailto:89184479797@mail.ru">89184479797@mail.ru</a></p>
         <p>ул.&nbsp;Станкостроительная, 1<br>ул.&nbsp;Советская, 40</p>
       </div>
       <div>

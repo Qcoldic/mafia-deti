@@ -297,6 +297,7 @@ h2{margin:.42em 0 .45em;font:800 clamp(27px,4.4vw,50px)/1.1 var(--display);lette
 .phones li{display:grid;gap:2px}
 .phones li span{padding-left:32px}
 .phones a{display:inline-flex;align-items:center;gap:10px;font:700 clamp(20px,2.4vw,24px)/1.2 var(--display);text-decoration:none;letter-spacing:-.01em}
+.phones a.phones-mail{font-size:17px}/* адрес длинный: в размере телефонов не влезает в 320 px */
 .phones a:hover{color:var(--red-deep)}
 .phones .ico{color:var(--red);width:22px;height:22px}
 .phones span{font-size:14px;color:var(--muted)}
