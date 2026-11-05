@@ -286,6 +286,7 @@ h2{margin:.42em 0 .45em;font:800 clamp(27px,4.4vw,50px)/1.1 var(--display);lette
 .acard-pin{position:absolute;top:24px;right:24px;width:30px;height:30px;color:var(--gold)}
 .acard h3{margin:22px 0 26px;font:700 clamp(16px,2.4vw,27px)/1.2 var(--display);letter-spacing:-.01em}
 @media (min-width:400px) and (max-width:759px){.acard h3{font-size:clamp(18px,4.6vw,27px)}}
+.acard-area{margin:-14px 0 26px;font-size:15px;line-height:1.35;opacity:.8}
 .acard-links{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}
 
 /* ===== Запись ===== */
