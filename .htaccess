@@ -1,0 +1,5 @@
+# Принудительный HTTPS. За фронтенд-nginx REG.RU %{HTTPS} всегда off, поэтому смотрим X-Forwarded-Proto:
+# нет заголовка - нет редиректа, зациклиться не может
+RewriteEngine On
+RewriteCond %{HTTP:X-Forwarded-Proto} =http [NC]
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
