@@ -248,6 +248,11 @@ h2{margin:.42em 0 .45em;font:800 clamp(27px,4.4vw,50px)/1.1 var(--display);lette
 @media (min-width:860px){.camp-grid{grid-template-columns:1.25fr .75fr;gap:56px}}
 .camp-copy h2{margin-bottom:.6em}
 .camp-time{display:flex;align-items:center;gap:16px;margin:0;font:800 clamp(30px,5vw,56px)/1.05 var(--display);letter-spacing:-.02em}
+.camp-age{margin:18px 0 0;font-size:clamp(17px,1.6vw,19px);color:var(--muted);max-width:30ch}
+.schools{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:-12px 0 clamp(28px,4vw,44px)}
+.schools-label{margin:0;font-weight:600}
+.schools-list{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.schools-list li{display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border:1.5px solid var(--gold-edge);border-radius:999px;background:#fff;font-weight:600;font-size:15px}
 .camp-time .ico{width:clamp(40px,5vw,60px);height:clamp(40px,5vw,60px);color:var(--red)}
 .ticket{position:relative;padding:28px 28px 26px;border-radius:20px;background:var(--card);border:2px dashed rgba(195,38,44,.4);box-shadow:var(--shadow-card)}
 /* вырезы, как у билета */
