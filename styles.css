@@ -186,6 +186,8 @@ h2{margin:.42em 0 .45em;font:800 clamp(27px,4.4vw,50px)/1.1 var(--display);lette
 .incl .ico{color:var(--gold-deep)}
 .shift-foot{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px 20px;margin-top:auto;padding-top:22px;border-top:1.5px dashed var(--gold-edge)}
 .price{margin:0;font:800 clamp(30px,3.6vw,38px)/1 var(--display);letter-spacing:-.02em}
+.price-box{display:flex;flex-direction:column;gap:10px;min-width:0}
+.price-note{margin:0;font-size:14px;line-height:1.45;color:var(--muted)}
 .price small,.dayrate-price small{font:600 15px/1 var(--body);letter-spacing:0;color:var(--muted)}
 .dayrate{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;max-width:980px;margin-top:24px;padding:18px 24px;border-radius:20px;background:var(--ink);color:var(--on-ink)}
 @media (min-width:760px){.dayrate{margin-top:28px}}
